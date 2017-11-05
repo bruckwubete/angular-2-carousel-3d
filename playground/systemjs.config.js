@@ -7,7 +7,8 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': '../node_modules/'
+      'npm:': '../node_modules/',
+      'jquery': '../node_modules/jquery/dist/jquery.min.js'
     },
     // map tells the System loader where to look for things
     map: {
@@ -44,6 +45,9 @@
       },
       'ng2-carousel-3d': {
         main: 'ng2-carousel-3d.umd.js',
+        defaultExtension: 'js'
+      },
+      jquery: {
         defaultExtension: 'js'
       }
     }

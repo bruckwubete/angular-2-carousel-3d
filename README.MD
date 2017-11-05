@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'ng2-carousel-3d';
+import { Ng2Carousel3dModule }  from 'ng2-carousel-3d';
 
 @NgModule({
   declarations: [
@@ -33,8 +33,7 @@ import { SampleModule } from 'ng2-carousel-3d';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
+    Ng2Carousel3dModule,  // Specify Ng2Carousel3dModule as an import
     LibraryModule
   ],
   providers: [],
@@ -50,7 +49,11 @@ Once your library is imported, you can use its components, directives and pipes 
 <h1>
   {{title}}
 </h1>
-<sampleComponent></sampleComponent>
+<ng2-carousel-3d [slides]="slides" [options]="options" class="col-12" #carousel>
+    <ng2-carousel-3d-slide *ngFor="let slide of slides; let i = index" (click)="slideClicked(i)">
+        <img class="slide-img" src="{{slide.src}}" alt=""/>
+    </ng2-carousel-3d-slide>
+</ng2-carousel-3d>
 ```
 
 ## Development

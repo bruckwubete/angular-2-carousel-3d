@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { Ng2Carousel3dModule }  from 'ng2-carousel-3d';
+import { Ng2Carousel3dModule }  from '../src/index';
 
 @Component({
   selector: 'app',
@@ -16,7 +16,23 @@ import { Ng2Carousel3dModule }  from 'ng2-carousel-3d';
                 </ng2-carousel-3d-slide>
               </ng2-carousel-3d>`
 })
-class AppComponent {}
+export class AppComponent {
+  slides : Array<Object> = [{'src': '/assets/img/blur-bg-blurred.jpg'},{'src': '/assets/img/blur-bg-blurred.jpg'},{'src': '/assets/img/blur-bg-blurred.jpg'},{'src': '/assets/img/blur-bg-blurred.jpg'},{'src': '/assets/img/blur-bg-blurred.jpg'},{'src': '/assets/img/blur-bg-blurred.jpg'},{'src': '/assets/img/blur-bg-blurred.jpg'}]
+  options : Object = {
+    clicking: true,
+    sourceProp: 'src',
+    visible: 7,
+    perspective: 1,
+    startSlide: 0,
+    border: 3,
+    dir: 'ltr',
+    width: 360,
+    height: 270,
+    space: 220,
+    autoRotationSpeed: 5000,
+    loop: true
+}
+}
 
 @NgModule({
   bootstrap: [ AppComponent ],

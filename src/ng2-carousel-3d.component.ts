@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, OnDestroy, SimpleChanges } from '@angular/core';
 import { Ng2Carousel3dService }  from './ng2-carousel-3d.service';
 import $ from 'jquery';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/observable/timer';
 
 @Component({
   selector: 'ng2-carousel-3d',
