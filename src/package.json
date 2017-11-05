@@ -1,0 +1,28 @@
+{
+  "name": "ng2-carousel-3d",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bruckwubete/angular-2-carousel-3d"
+  },
+  "author": {
+    "name": "Bruck Wubete",
+    "email": "bruckwendwessenwubet@cmail.carleton.ca"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bruckwubete/angular-2-carousel-3d/issues"
+  },
+  "main": "ng2-carousel-3d.umd.js",
+  "module": "ng2-carousel-3d.js",
+  "jsnext:main": "ng2-carousel-3d.js",
+  "typings": "ng2-carousel-3d.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
