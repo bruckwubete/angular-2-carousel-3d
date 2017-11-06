@@ -69,11 +69,11 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
                   var outerHeight = this.carousel3d.getOuterHeight(),
                       outerWidth = this.carousel3d.getOuterWidth();
 
-                  $('div.carousel-3d-container').css({'height': outerHeight + 'px'});
+                  jquery('div.carousel-3d-container').css({'height': outerHeight + 'px'});
 
 
 
-                    this.$wrapper = $('div.carousel-3d');
+                    this.$wrapper = jquery('div.carousel-3d');
                     this.$wrapper.css({'width': outerWidth + 'px', 'height': outerHeight + 'px'});
                     this.$slides = this.$wrapper.children().toArray();
 
@@ -88,7 +88,7 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
               // == Preloaded images reject  handler
               function handleReject(carousel) {
 
-                  $().css({'height': carousel.getOuterHeight() + 'px'});
+                jquery().css({'height': carousel.getOuterHeight() + 'px'});
 
                   this.isLoading = false;
                   this.isSuccessful = false;
@@ -249,7 +249,7 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
       }
 
       this.$slides.forEach((slide, index) => {
-          $().removeClass('current');
+        jquery().removeClass('current');
       });
 
       this.carousel3d.setLock(true);
@@ -332,8 +332,8 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
       if(!this.$timer) this.subscribe()
   }
 
-  getSlide(index) {
-      return (index >= 0) ? $(this.$slides[index]) : $(this.$slides[this.carousel3d.total + index]);
+  getSlide(index):any {
+      return (index >= 0) ? jquery(this.$slides[index]) : jquery(this.$slides[this.carousel3d.total + index]);
   }
 
   slideClicked(index) {
