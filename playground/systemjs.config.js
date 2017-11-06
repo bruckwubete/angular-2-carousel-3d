@@ -7,8 +7,7 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': '../node_modules/',
-      'jquery': '../node_modules/jquery/dist/jquery.min.js'
+      'npm:': '../node_modules/'
     },
     // map tells the System loader where to look for things
     map: {
