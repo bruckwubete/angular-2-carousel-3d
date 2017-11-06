@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy, SimpleChanges } from '@angular/core';
 import { Ng2Carousel3dService }  from './ng2-carousel-3d.service';
-import $ from 'jquery';
+import * as jqueryProxy from 'jquery'
+const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/timer';
