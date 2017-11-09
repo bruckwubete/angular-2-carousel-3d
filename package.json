@@ -29,6 +29,9 @@
   "bugs": {
     "url": "https://github.com/bruckwubete/angular-2-carousel-3d/issues"
   },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
   "devDependencies": {
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -50,7 +53,6 @@
     "gulp-rollup": "^2.15.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
-    "jquery": "^3.2.1",
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",

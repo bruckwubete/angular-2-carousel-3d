@@ -8,12 +8,15 @@ To install this library, run:
 $ npm install ng2-carousel-3d --save
 ```
 
-## Consuming
+#Dependencies
 
+This library needs jquery
+
+import jquery globally as per your type of your project.
+
+## Consuming
 ```bash
 $ npm install ng2-carousel-3d
-
-Note: please make sure you have installed jquery
 ```
 
 and then from your Angular `AppModule`:
