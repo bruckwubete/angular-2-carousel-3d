@@ -14,11 +14,6 @@ This library needs jquery
 
 import jquery globally as per your type of your project.
 
-## Consuming
-```bash
-$ npm install ng2-carousel-3d
-```
-
 and then from your Angular `AppModule`:
 
 ```typescript
