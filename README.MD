@@ -14,7 +14,9 @@ This library needs jquery
 
 import jquery globally as per your type of your project.
 
-and then from your Angular `AppModule`:
+## Consuming
+
+In you Angular `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
