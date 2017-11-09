@@ -8,12 +8,12 @@ To install this library, run:
 $ npm install ng2-carousel-3d --save
 ```
 
-## Consuming your library
-
-Once you have published your library to npm, you can import your library in any Angular application by running:
+## Consuming
 
 ```bash
 $ npm install ng2-carousel-3d
+
+Note: please make sure you have installed jquery
 ```
 
 and then from your Angular `AppModule`:
@@ -54,6 +54,44 @@ Once your library is imported, you can use its components, directives and pipes 
         <img class="slide-img" src="{{slide.src}}" alt=""/>
     </ng2-carousel-3d-slide>
 </ng2-carousel-3d>
+```
+
+```typescript
+ // app.component.ts
+  @ViewChild('carousel') carousel:any;
+  movies : Object[] = []
+  slides : Array<Object> = []
+  options : Object = {
+    clicking: true,
+    sourceProp: 'src',
+    visible: 7,
+    perspective: 1,
+    startSlide: 0,
+    border: 3,
+    dir: 'ltr',
+    width: 360,
+    height: 270,
+    space: 220,
+    autoRotationSpeed: 5000,
+    loop: true
+}
+  constructor(private $movie: MovieService) { //some service  in this case Movie
+
+      $movie.getMovies(1).subscribe(res => {
+        this.movies = this.movies.concat(res);
+        let newSlides = new Array<object>()
+
+        res.forEach((item) => {
+          newSlides.push({src: item['poster_image']})
+        })
+        this.slides = newSlides.concat(this.slides)
+      })
+
+  }
+
+  slideClicked (index) {
+    this.carousel.slideClicked(index)
+   }
 ```
 
 ## Development
