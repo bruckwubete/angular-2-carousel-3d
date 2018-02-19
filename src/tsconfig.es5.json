@@ -20,9 +20,7 @@
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
-    "skipTemplateCodegen": true,
-    "flatModuleOutFile": "ng2-carousel-3d.js",
-    "flatModuleId": "ng2-carousel-3d"
+    "skipTemplateCodegen": true
   },
   "files": [
     "./index.ts"

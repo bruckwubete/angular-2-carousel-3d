@@ -56,7 +56,7 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
     this.$carouselService = new Ng2Carousel3dService(this.slides, this.options)
     this.percentSubscription = this.$carouselService.getPercent().subscribe(sub => {this.percentLoaded = sub.percent})
     this.autoRotationLocked = false
-    this.$carouselService
+    return this.$carouselService
           .build(this.slides || [], this.options || {})
           .then( (carousel) => {
                   this.carousel3d = carousel;
@@ -87,11 +87,13 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
               },
               // == Preloaded images reject  handler
               function handleReject(carousel) {
-
+                if (this) {
+                    this.carousel3d = carousel;
+                    this.isLoading = false;
+                    this.isSuccessful = false;
+                }
                 jquery().css({'height': carousel.getOuterHeight() + 'px'});
 
-                  this.isLoading = false;
-                  this.isSuccessful = false;
               },
               // == Preloaded images notify handler which is executed multiple times during preload
               function handleNotify(event) {
@@ -201,8 +203,12 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
 
       var leftRemain = (this.carousel3d.space == 'auto') ? ((i + 1) * (this.carousel3d.width / 1.5)) : ((i + 1) * (this.carousel3d.space)),
           transform = (positive) ?
-                      'translateX(' + (leftRemain) + 'px) translateZ(-' + (this.carousel3d.inverseScaling + ((i + 1) * 100)) + 'px) rotateY(-' + this.carousel3d.perspective + 'deg)' :
-                      'translateX(-' + (leftRemain) + 'px) translateZ(-' + (this.carousel3d.inverseScaling + ((i + 1) * 100)) + 'px) rotateY(' + this.carousel3d.perspective + 'deg)',
+                      'translateX(' + (leftRemain) + 'px) translateZ(-' +
+                        (this.carousel3d.inverseScaling + ((i + 1) * 100)) + 'px) rotateY(-' +
+                        this.carousel3d.perspective + 'deg)' :
+                      'translateX(-' + (leftRemain) + 'px) translateZ(-' +
+                        (this.carousel3d.inverseScaling + ((i + 1) * 100)) + 'px) rotateY(' +
+                        this.carousel3d.perspective + 'deg)',
           left = '0%',
           top = (this.carousel3d.topSpace === 'auto') ? 'none' : ((i + 1) * (this.carousel3d.space)),
           width = 'none',
@@ -329,7 +335,9 @@ export class Ng2Carousel3dComponent implements OnInit, OnDestroy {
               index: this.carousel3d.currentIndex
           });
       }
-      if(!this.$timer) this.subscribe()
+      if(!this.$timer){
+        this.subscribe()
+      }
   }
 
   getSlide(index):any {

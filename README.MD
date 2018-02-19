@@ -16,6 +16,17 @@ import jquery globally as per your type of your project.
 
 ## Consuming
 
+#Option 1
+clone this repo and run
+
+```bash
+$ npm run build
+$ npm run playground:build
+$ npm run playground
+```
+
+#Option 2
+
 In you Angular `AppModule`:
 
 ```typescript

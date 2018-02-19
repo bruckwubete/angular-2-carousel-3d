@@ -116,7 +116,7 @@ build (model, params) {
         }
 
         return carousel
-    })
+    }, function(err){ return carousel})
 
 };
 
@@ -140,8 +140,6 @@ load() {
     if (this.isInitiated()) {
         return this;
     }
-
-
     this.state = this.states.LOADING;
 
     if (!this.sourceProp) {
@@ -152,8 +150,6 @@ load() {
             this.loadImageLocation(this.slides[i]);
         }
     }
-
-
     return this;
 }
 
@@ -179,8 +175,6 @@ handleImageLoad(imageLocation) {
 
     if (this.loadCount === this.total) {
         this.state = this.states.RESOLVED;
-
-
         this.deferred.resolve(this);
     }
 }
@@ -188,7 +182,7 @@ handleImageLoad(imageLocation) {
 loadImageLocation(imageLocation) {
 
     var carousel = this,
-        image = new Image();
+    image = new Image();
 
     image.onload = function (event) {
       carousel.handleImageLoad(event.target);
