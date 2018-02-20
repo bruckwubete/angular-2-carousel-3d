@@ -1,10 +1,6 @@
 {
   "name": "ng2-carousel-3d",
-<<<<<<< HEAD
-  "version": "0.3.0",
-=======
-  "version": "0.1.10",
->>>>>>> parent of 0af4dde... fixed jquery, isloading issue and playground
+  "version": "0.2.1",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
