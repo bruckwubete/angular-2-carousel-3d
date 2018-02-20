@@ -25,6 +25,9 @@ $ npm run playground:build
 $ npm run playground
 ```
 
+you should see something that looks like this at http://localhost:3001/
+
+![alt text](docs/ng2-carousel-3d-output.jpg "ng2-carousel-3d in Action")
 #Option 2
 
 In you Angular `AppModule`:
