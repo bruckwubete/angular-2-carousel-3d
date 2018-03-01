@@ -1,3 +1,5 @@
+### DEPRECATED IN FAVOR OF https://github.com/bruckwubete/ngx-carousel-3d
+
 # ng2-carousel-3d
 
 ## Installation
